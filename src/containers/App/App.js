@@ -9,6 +9,7 @@ function App() {
   const [ipAddress, setIpAddress] = useState('');
   const [geoDetails, setGeoDetails] = useState({ location: {} });
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+  const { city, region } = geoDetails.location;
 
   const fetchGeoDetails = () => {
     axios
@@ -32,7 +33,7 @@ function App() {
         fetchGeoDetails={fetchGeoDetails}
       />
       <GeoDetailsCard geoDetails={geoDetails} />
-      <MapLocation coordinates={coordinates} />
+      <MapLocation coordinates={coordinates} city={city} region={region} />
     </div>
   );
 }
