@@ -1,5 +1,6 @@
 import React from 'react';
 import ArrowIcon from '../../assets/icon-arrow.svg';
+import './Header.scss';
 
 function Header({ updateAddress, fetchGeoDetails }) {
   return (
@@ -15,7 +16,7 @@ function Header({ updateAddress, fetchGeoDetails }) {
         <input
           type="text"
           className="input-form__address-input"
-          placeholder="Search for any IP address or domain"
+          placeholder="Search for IP address or domain"
           onChange={updateAddress}
         />
         <button type="submit" className="input-form__submit-button">

@@ -3,12 +3,13 @@ import Header from '../../components/Header/Header';
 import GeoDetailsCard from '../../components/GeoDetailsCard/GeoDetailsCard';
 import MapLocation from '../../components/MapLocation/MapLocation';
 import axios from 'axios';
-import './App.css';
+import './App.scss';
 
 function App() {
   const [ipAddress, setIpAddress] = useState('');
   const [geoDetails, setGeoDetails] = useState({ location: {} });
   const [coordinates, setCoordinates] = useState({ lat: 0, lng: 0 });
+  const [loadStatus, setLoadStatus] = useState(true);
   const { city, region } = geoDetails.location;
 
   const fetchGeoDetails = () => {
@@ -20,6 +21,7 @@ function App() {
         const { location } = response.data;
         setGeoDetails(response.data);
         setCoordinates({ lat: location.lat, lng: location.lng });
+        setLoadStatus(false);
       })
       .catch((err) => console.log(err));
   };
@@ -32,7 +34,7 @@ function App() {
         updateAddress={(e) => setIpAddress(e.target.value)}
         fetchGeoDetails={fetchGeoDetails}
       />
-      <GeoDetailsCard geoDetails={geoDetails} />
+      <GeoDetailsCard geoDetails={geoDetails} loading={loadStatus} />
       <MapLocation coordinates={coordinates} city={city} region={region} />
     </div>
   );
