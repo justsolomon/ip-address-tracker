@@ -3,7 +3,6 @@ import Header from '../../components/Header/Header';
 import GeoDetailsCard from '../../components/GeoDetailsCard/GeoDetailsCard';
 import MapLocation from '../../components/MapLocation/MapLocation';
 import axios from 'axios';
-import './App.scss';
 
 function App() {
   const [ipAddress, setIpAddress] = useState('');
@@ -13,6 +12,8 @@ function App() {
   const { city, region } = geoDetails.location;
 
   const fetchGeoDetails = () => {
+    setLoadStatus(true);
+
     axios
       .get(
         `https://geo.ipify.org/api/v1?apiKey=at_A8mVOj6Sj9mWMtcXbCJYe7594SdxL&ipAddress=${ipAddress}`
@@ -23,7 +24,10 @@ function App() {
         setCoordinates({ lat: location.lat, lng: location.lng });
         setLoadStatus(false);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        setLoadStatus(false);
+        window.alert(err);
+      });
   };
 
   useEffect(fetchGeoDetails, []);
