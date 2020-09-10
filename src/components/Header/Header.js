@@ -16,7 +16,7 @@ function Header({ updateAddress, fetchGeoDetails }) {
         <input
           type="text"
           className="input-form__address-input"
-          placeholder="Search for IP address or domain"
+          placeholder="Search IP address e.g 161.185.160.93"
           onChange={updateAddress}
         />
         <button type="submit" className="input-form__submit-button">

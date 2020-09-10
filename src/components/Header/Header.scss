@@ -38,7 +38,7 @@
     border-bottom-right-radius: 0;
 
     &::placeholder {
-      font-size: 1rem;
+      font-size: 0.85rem;
       color: hsl(0, 0%, 59%);
     }
   }
@@ -54,6 +54,12 @@
     &:hover {
       background-color: hsl(0, 0%, 59%);
     }
+  }
+}
+
+@media (min-width: 430px) {
+  .input-form__address-input::placeholder {
+    font-size: 1rem;
   }
 }
 
