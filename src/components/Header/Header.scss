@@ -39,6 +39,7 @@
 
     &::placeholder {
       font-size: 1rem;
+      color: hsl(0, 0%, 59%);
     }
   }
 
@@ -56,16 +57,49 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 600px) and (max-width: 1000px) {
   .input-form {
-    justify-content: center;
-
+    width: 60%;
+    margin: auto;
     &__address-input {
-      width: 35%;
+      width: 85%;
     }
 
     &__submit-button {
-      width: 5%;
+      width: 15%;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    background-image: url('../../assets/pattern-bg.png');
+    height: 35vh;
+
+    .input-form {
+      justify-content: center;
+
+      &__address-input {
+        width: 40%;
+      }
+
+      &__submit-button {
+        width: 7%;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .header {
+    .input-form {
+      &__address-input {
+        width: 35%;
+      }
+
+      &__submit-button {
+        width: 5%;
+      }
     }
   }
 }
