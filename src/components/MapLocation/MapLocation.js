@@ -6,14 +6,9 @@ import './MapLocation.scss';
 function MapLocation({ coordinates, city, region }) {
   const { lat, lng } = coordinates;
   return (
-    <Map
-      zoomControl={false}
-      center={[lat, lng]}
-      zoom={13}
-      style={{ height: '500px' }}
-    >
+    <Map zoomControl={false} center={[lat, lng]} zoom={16}>
       <TileLayer
-        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors | Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. Coded by <a href="https://github.com/justsolomon" target="_blank" rel="noopener noreferrer">Solomon</a>.'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[lat, lng]} icon={LocationIcon}>
