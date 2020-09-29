@@ -2,6 +2,8 @@
 
 A web application for getting the position of a location on the map and its details using its IP Address. Built with ReactJS and SCSS. Solution to the [IP Address Tracker challenge](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0) on [Frontend Mentor](https://frontendmentor.io).
 
+You can view the app live [here](https://ipaddress-tracker.netlify.app/).
+
 ## To run locally
 
 **NOTE**: You need the latest version of node and npm installed on your computer to run the app locally.
